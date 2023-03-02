@@ -1,0 +1,15 @@
+<h1>確認画面</h1>
+<p>内容: <%= @post.content %></p>
+
+<p id="notice"><%= notice %></p>
+
+<p>投稿者: <%= @post.user.name %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @post.image.url if @post.image && @post.image.url %>
+  <%# <%=で囲ってるところはrubyの記述ができる、if以降の記述で画像がなくても文だけ表示できろ%>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %> |
+<%= link_to 'Back', posts_path, class: "btn btn-primary" %>
