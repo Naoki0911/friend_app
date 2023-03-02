@@ -4,11 +4,13 @@
 
 <table>
   <tr>
+    <th class = "mr-1">投稿者</th>
     <th>内容</th>
   </tr>
 
 <% @posts.each do |post| %>
   <tr>
+    <td><%= post.user.name %></td>
     <td><%= post.content %></td>
     <td><%= link_to "確認する", post_path(post.id), class: "btn btn-outline-primary" %></td>
     <td><%= link_to "編集する", edit_post_path(post.id) ,data: { confirm: '本当に編集していいですか？' }, class: "btn btn-outline-primary" %></td>

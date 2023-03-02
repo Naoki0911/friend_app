@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  oot to: 'users#new'
+  root to: 'users#new'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
   resources :posts do
